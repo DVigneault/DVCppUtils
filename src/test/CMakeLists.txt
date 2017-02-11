@@ -52,9 +52,9 @@ add_executable(dvXORSwapTest dvXORSwapTest.cxx)
 target_link_libraries(dvXORSwapTest DVCppUtils)
 add_test(dvXORSwapTest dvXORSwapTest)
 
-add_executable(dvInsertionSortTest dvInsertionSortTest.cxx)
-target_link_libraries(dvInsertionSortTest DVCppUtils)
-add_test(dvInsertionSortTest dvInsertionSortTest)
+add_executable(dvSortTest dvSortTest.cxx)
+target_link_libraries(dvSortTest DVCppUtils)
+add_test(dvSortTest dvSortTest)
 
 add_executable(dvTriangleAspectRatioRegularizerTest dvTriangleAspectRatioRegularizerTest.cxx)
 target_link_libraries(dvTriangleAspectRatioRegularizerTest DVCppUtils
