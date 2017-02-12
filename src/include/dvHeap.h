@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <cassert>
-#include <iostream>
 
 /*
 - Root node is position 0 in data array
@@ -40,11 +39,7 @@ std::vector<T> data;
 void upheap(std::size_t index)
 {
 
-  if (index == 0)
-    {
-    std::cerr << "Can't upheap root node." << std::endl;
-    return;
-    }
+  if (index == 0) return;
 
   std::size_t parent = this->get_parent(index);
   const auto value = this->data[index];
