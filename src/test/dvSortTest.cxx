@@ -1,5 +1,7 @@
 #include <dvInsertionSort.h>
 #include <dvMergeSort.h>
+#include <dvHeapSort.h>
+#include <dvHeap.h>
 #include <cstdlib>
 #include <algorithm>
 #include <cassert>
@@ -24,12 +26,27 @@ int main()
   ////////////////
 
   std::random_shuffle(v.begin(), v.end());
-  for (const auto i : v) std::cout << i << ' ';
-  std::cout << std::endl;
   dv::MergeSort(v.begin(), v.end());
   assert(std::is_sorted(v.cbegin(), v.cend()));
-  for (const auto i : v) std::cout << i << ' ';
-  std::cout << std::endl;
+
+  ///////////////
+  // Heap Sort //
+  ///////////////
+
+  std::random_shuffle(v.begin(), v.end());
+  dv::HeapSort(v.begin(), v.end());
+  assert(std::is_sorted(v.cbegin(), v.cend()));
+
+  /////////////////////////////////
+  // Heap Sort Using Custom Heap //
+  /////////////////////////////////
+
+  std::random_shuffle(v.begin(), v.end());
+  dv::Heap<int> h;
+  for (const auto i : v) h.push(i);
+  v.clear();
+  while (h.size() > 0) v.push_back(h.pop());
+  assert(std::is_sorted(v.cbegin(), v.cend()));
 
   return EXIT_SUCCESS;
 

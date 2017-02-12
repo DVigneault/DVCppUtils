@@ -3,6 +3,10 @@
 
 #include <algorithm>
 
+/*
+- O(nlog(n)) sorting algorithm
+- Used in Timsort
+*/
 namespace dv
 {
 

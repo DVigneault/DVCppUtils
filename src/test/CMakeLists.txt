@@ -56,6 +56,10 @@ add_executable(dvSortTest dvSortTest.cxx)
 target_link_libraries(dvSortTest DVCppUtils)
 add_test(dvSortTest dvSortTest)
 
+add_executable(dvHeapTest dvHeapTest.cxx)
+target_link_libraries(dvHeapTest DVCppUtils)
+add_test(dvHeapTest dvHeapTest)
+
 add_executable(dvTriangleAspectRatioRegularizerTest dvTriangleAspectRatioRegularizerTest.cxx)
 target_link_libraries(dvTriangleAspectRatioRegularizerTest DVCppUtils
                                                            ${CERES_LIBRARIES}
