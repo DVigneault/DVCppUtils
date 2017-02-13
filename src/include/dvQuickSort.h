@@ -33,8 +33,10 @@ void QuickSort(const It b, const It e)
   // Get some pivot.
   const auto pivot = *std::next(b, std::distance(b, e) / 2);
 
-  const auto func1 = [pivot](const typename It::value_type &element){ return element<pivot; };
-  const auto func2 = [pivot](const typename It::value_type &element){ return element==pivot; };
+  using T = typename It::value_type;
+
+  const auto func1 = [pivot](const T &element){ return element<pivot; };
+  const auto func2 = [pivot](const T &element){ return element==pivot; };
 
   const auto m1 = dv::Partition(b, e, func1);
   const auto m2 = dv::Partition(m1, e, func2);
