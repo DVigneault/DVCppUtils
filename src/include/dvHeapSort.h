@@ -4,12 +4,18 @@
 #include <algorithm>
 
 /*
-- O(nlog(n)) sorting algorithm
+
+Time Efficiency:
+- Best, Average, and Worst Case: O(n log(n))
+
+Memory Efficiency:
+- Naive: O(N) -- Duplicate data in heap
+- Best: O(1) -- In place
+
+Notes:
 - Based on the `heap' data structure, which is a complete, binary tree
-  where the highest priority node is always placed at the root.
+- Highest priority node is always placed at the root.
 - Not stable (doesn't preserve order of equal elements)
-- Naive implementation requires additonal space, but clever implementations
-  exist to do it in place.
 */
 
 namespace dv
