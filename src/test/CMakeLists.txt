@@ -64,6 +64,10 @@ add_executable(dvReverseFindIfTest dvReverseFindIfTest.cxx)
 target_link_libraries(dvReverseFindIfTest DVCppUtils)
 add_test(dvReverseFindIfTest dvReverseFindIfTest)
 
+add_executable(dvSmartPointerTest dvSmartPointerTest.cxx)
+target_link_libraries(dvSmartPointerTest DVCppUtils)
+add_test(dvSmartPointerTest dvSmartPointerTest)
+
 add_executable(dvTriangleAspectRatioRegularizerTest dvTriangleAspectRatioRegularizerTest.cxx)
 target_link_libraries(dvTriangleAspectRatioRegularizerTest DVCppUtils
                                                            ${CERES_LIBRARIES}
