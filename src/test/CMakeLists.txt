@@ -60,6 +60,10 @@ add_executable(dvHeapTest dvHeapTest.cxx)
 target_link_libraries(dvHeapTest DVCppUtils)
 add_test(dvHeapTest dvHeapTest)
 
+add_executable(dvReverseFindIfTest dvReverseFindIfTest.cxx)
+target_link_libraries(dvReverseFindIfTest DVCppUtils)
+add_test(dvReverseFindIfTest dvReverseFindIfTest)
+
 add_executable(dvTriangleAspectRatioRegularizerTest dvTriangleAspectRatioRegularizerTest.cxx)
 target_link_libraries(dvTriangleAspectRatioRegularizerTest DVCppUtils
                                                            ${CERES_LIBRARIES}

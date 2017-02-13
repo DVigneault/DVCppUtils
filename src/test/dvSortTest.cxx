@@ -19,7 +19,7 @@ int main()
   ////////////////////
 
   std::random_shuffle(v.begin(), v.end());
-  dv::InsertionSort(v);
+  dv::InsertionSort(v.begin(), v.end());
   assert(std::is_sorted(v.cbegin(), v.cend()));
 
   ////////////////
