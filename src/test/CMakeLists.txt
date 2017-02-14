@@ -68,6 +68,10 @@ add_executable(dvSmartPointerTest dvSmartPointerTest.cxx)
 target_link_libraries(dvSmartPointerTest DVCppUtils)
 add_test(dvSmartPointerTest dvSmartPointerTest)
 
+add_executable(dvSoftMaxTest dvSoftMaxTest.cxx)
+target_link_libraries(dvSoftMaxTest DVCppUtils)
+add_test(dvSoftMaxTest dvSoftMaxTest)
+
 add_executable(dvTriangleAspectRatioRegularizerTest dvTriangleAspectRatioRegularizerTest.cxx)
 target_link_libraries(dvTriangleAspectRatioRegularizerTest DVCppUtils
                                                            ${CERES_LIBRARIES}
