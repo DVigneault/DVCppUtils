@@ -29,6 +29,10 @@ main()
       }
     }
 
+  std::vector<int> v({0, 1, 2, 3});
+
+  std::cout << dv::Join(",",v.cbegin(),v.cend()) << std::endl;
+
   return EXIT_SUCCESS;
 
 }
