@@ -6,8 +6,8 @@ namespace dv
 {
 
 std::size_t
-NumberOfSequentialFiles(const std::string& directory,
-                        const std::function<std::size_t(std::string)>& formatter)
+NumberOfSequentialFiles(const std::string&,
+                        const std::function<std::size_t(std::string)>&)
 {
 
   std::size_t num_files = 0;
