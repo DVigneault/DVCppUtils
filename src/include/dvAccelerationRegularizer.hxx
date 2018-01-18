@@ -1,6 +1,6 @@
 
-#ifndef dvSecondDifferenceRegularizer_hxx
-#define dvSecondDifferenceRegularizer_hxx
+#ifndef dvAccelerationRegularizer_hxx
+#define dvAccelerationRegularizer_hxx
 
 #include <limits>
 #include <ceres/ceres.h>
@@ -9,8 +9,8 @@ namespace dv
 {
 
 template<class TMovingMesh>
-SecondDifferenceRegularizer<TMovingMesh>
-::SecondDifferenceRegularizer(
+AccelerationRegularizer<TMovingMesh>
+::AccelerationRegularizer(
   const typename std::vector<typename TMovingMesh::Pointer>
     &_movingVector,
   const typename std::vector<typename TMovingMesh::PointsContainer::Pointer>
@@ -32,7 +32,7 @@ SecondDifferenceRegularizer<TMovingMesh>
 
 template<class TMovingMesh>
 bool
-SecondDifferenceRegularizer<TMovingMesh>
+AccelerationRegularizer<TMovingMesh>
 ::Evaluate(const double* const* parameters,
            double* residuals,
            double** jacobians) const
@@ -91,7 +91,7 @@ SecondDifferenceRegularizer<TMovingMesh>
 
 template<class TMovingMesh>
 unsigned int
-SecondDifferenceRegularizer<TMovingMesh>
+AccelerationRegularizer<TMovingMesh>
 ::GetNumberOfFrames() const
 {
   return this->movingVector.size();
@@ -99,7 +99,7 @@ SecondDifferenceRegularizer<TMovingMesh>
 
 template<class TMovingMesh>
 unsigned int
-SecondDifferenceRegularizer<TMovingMesh>
+AccelerationRegularizer<TMovingMesh>
 ::GetPrevFrame() const
 {
   return vnl_math::remainder_floored( ( int(this->frame) - 1 ),
@@ -108,7 +108,7 @@ SecondDifferenceRegularizer<TMovingMesh>
 
 template<class TMovingMesh>
 unsigned int
-SecondDifferenceRegularizer<TMovingMesh>
+AccelerationRegularizer<TMovingMesh>
 ::GetCurrentFrame() const
 {
   return this->frame;
@@ -116,7 +116,7 @@ SecondDifferenceRegularizer<TMovingMesh>
 
 template<class TMovingMesh>
 unsigned int
-SecondDifferenceRegularizer<TMovingMesh>
+AccelerationRegularizer<TMovingMesh>
 ::GetNextFrame() const
 {
   return (this->frame+1) % this->GetNumberOfFrames();

@@ -1,6 +1,6 @@
 
-#ifndef dvPointCorrespondenceRegularizer_h
-#define dvPointCorrespondenceRegularizer_h
+#ifndef dvVelocityRegularizer_h
+#define dvVelocityRegularizer_h
 
 #include <limits>
 #include <ceres/ceres.h>
@@ -8,13 +8,13 @@
 namespace dv
 {
 template<class TMovingMesh>
-class PointCorrespondenceRegularizer :
+class VelocityRegularizer :
 public ceres::CostFunction
 {
 
   public:
 
-  PointCorrespondenceRegularizer(
+  VelocityRegularizer(
     const typename std::vector<typename TMovingMesh::Pointer>
       &_movingVector,
     const typename std::vector<typename TMovingMesh::PointsContainer::Pointer>
@@ -26,7 +26,7 @@ public ceres::CostFunction
                 double* residuals,
                 double** jacobians) const;
 
-  ~PointCorrespondenceRegularizer(){}
+  ~VelocityRegularizer(){}
 
 private:
 
@@ -43,7 +43,7 @@ private:
 }; // end class
 } // end namespace
 
-#include <dvPointCorrespondenceRegularizer.hxx>
+#include <dvVelocityRegularizer.hxx>
 
 #endif
 

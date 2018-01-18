@@ -1,6 +1,6 @@
 
-#ifndef dvPointCorrespondenceRegularizer_hxx
-#define dvPointCorrespondenceRegularizer_hxx
+#ifndef dvVelocityRegularizer_hxx
+#define dvVelocityRegularizer_hxx
 
 #include <limits>
 #include <ceres/ceres.h>
@@ -9,8 +9,8 @@ namespace dv
 {
 
 template<class TMovingMesh>
-PointCorrespondenceRegularizer<TMovingMesh>
-::PointCorrespondenceRegularizer(
+VelocityRegularizer<TMovingMesh>
+::VelocityRegularizer(
   const typename std::vector<typename TMovingMesh::Pointer>
     &_movingVector,
   const typename std::vector<typename TMovingMesh::PointsContainer::Pointer>
@@ -31,7 +31,7 @@ PointCorrespondenceRegularizer<TMovingMesh>
 
 template<class TMovingMesh>
 bool
-PointCorrespondenceRegularizer<TMovingMesh>
+VelocityRegularizer<TMovingMesh>
 ::Evaluate(const double* const* parameters,
            double* residuals,
            double** jacobians) const
@@ -84,7 +84,7 @@ PointCorrespondenceRegularizer<TMovingMesh>
 
 template<class TMovingMesh>
 unsigned int
-PointCorrespondenceRegularizer<TMovingMesh>
+VelocityRegularizer<TMovingMesh>
 ::GetNumberOfFrames() const
 {
   return this->movingVector.size();
@@ -92,7 +92,7 @@ PointCorrespondenceRegularizer<TMovingMesh>
 
 template<class TMovingMesh>
 unsigned int
-PointCorrespondenceRegularizer<TMovingMesh>
+VelocityRegularizer<TMovingMesh>
 ::GetCurrentFrame() const
 {
   return this->frame;
@@ -100,7 +100,7 @@ PointCorrespondenceRegularizer<TMovingMesh>
 
 template<class TMovingMesh>
 unsigned int
-PointCorrespondenceRegularizer<TMovingMesh>
+VelocityRegularizer<TMovingMesh>
 ::GetNextFrame() const
 {
   return (this->frame+1) % this->GetNumberOfFrames();

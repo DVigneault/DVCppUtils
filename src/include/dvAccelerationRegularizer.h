@@ -1,6 +1,6 @@
 
-#ifndef dvSecondDifferenceRegularizer_h
-#define dvSecondDifferenceRegularizer_h
+#ifndef dvAccelerationRegularizer_h
+#define dvAccelerationRegularizer_h
 
 #include <limits>
 #include <ceres/ceres.h>
@@ -8,13 +8,13 @@
 namespace dv
 {
 template<class TMovingMesh>
-class SecondDifferenceRegularizer :
+class AccelerationRegularizer :
 public ceres::CostFunction
 {
 
   public:
 
-  SecondDifferenceRegularizer(
+  AccelerationRegularizer(
     const typename std::vector<typename TMovingMesh::Pointer>
       &_movingVector,
     const typename std::vector<typename TMovingMesh::PointsContainer::Pointer>
@@ -26,7 +26,7 @@ public ceres::CostFunction
                 double* residuals,
                 double** jacobians) const;
 
-  ~SecondDifferenceRegularizer(){}
+  ~AccelerationRegularizer(){}
 
 private:
 
@@ -44,7 +44,7 @@ private:
 }; // end class
 } // end namespace
 
-#include <dvSecondDifferenceRegularizer.hxx>
+#include <dvAccelerationRegularizer.hxx>
 
 #endif
 

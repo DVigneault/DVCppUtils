@@ -29,7 +29,7 @@ include(DVPreventInBuildInstalls)
 
 option(BUILD_SHARED_LIBS "Build DVCppUtils with shared libraries." OFF)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 if (NOT CMAKE_CXX_FLAGS)
